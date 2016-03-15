@@ -1,0 +1,70 @@
+{
+   "variables": {
+      "iso_url": "http://distro.ibiblio.org/tinycorelinux/7.x/x86_64/release/CorePure64-7.0.iso",
+      "iso_checksum": "a160d3185bd7e9ca6ac250ca62add67e",
+      "iso_checksum_type": "md5",
+      "vm_name": "CorePure64-7.0",
+      "disk_size": "4000",
+      "username": "klit",
+      "password": "klit"
+   },
+   "builders": [
+      {
+            "vm_name": "{{user `vm_name`}}",
+            "type": "virtualbox-iso",
+            "guest_os_type": "Linux_64",
+            "iso_url": "{{user `iso_url`}}",
+            "iso_checksum": "{{user `iso_checksum`}}",
+            "iso_checksum_type": "{{user `iso_checksum_type`}}",
+            "shutdown_command": "sudo poweroff",
+            "format": "ovf",
+            "headless": true,
+            "ssh_username": "{{user `username`}}",
+            "ssh_password": "{{user `password`}}",
+            "vm_name": "{{user `vm_name`}}",
+            "hard_drive_interface": "ide",
+            "disk_size": "{{user `disk_size`}}",
+            "http_directory": "http",
+            "boot_wait": "5s",
+            "output_directory": "output/{{user `vm_name`}}",
+            "vboxmanage": [
+               ["modifyvm", "{{.Name}}", "--memory", "1024"],
+               ["modifyvm", "{{.Name}}", "--vram", "128"],
+               ["modifyvm", "{{.Name}}", "--cpus", "1"]
+            ],
+            "boot_command": [
+                "corepure64 user={{user `username`}}<enter><wait10>",
+                "sudo passwd {{user `password`}}<enter><wait>{{user `password`}}<enter>{{user `password`}}<enter>",
+                "tce-load -wi openssh<enter><wait10><wait10>",
+                "cd /usr/local/etc/ssh; [ -f sshd_config_example ] && sudo cp -a sshd_config_example sshd_config; cd<enter>",
+                "sudo /usr/local/etc/init.d/openssh start<enter>"
+            ]
+      }
+   ],
+   "provisioners": [
+		{
+			"type": "file",
+			"source": "provisioners/data/x64/jpeglib.tcz",
+			"destination": "/home/{{user `username`}}/jpeglib.tcz"
+		},
+		{
+			"type": "file",
+			"source": "provisioners/data/x64/jpeglib.tcz.md5.txt",
+			"destination": "/home/{{user `username`}}/jpeglib.tcz.md5.txt"
+		},
+		{
+			"type": "file",
+			"source": "provisioners/data/x64/libmcrypt.tcz",
+			"destination": "/home/{{user `username`}}/libmcrypt.tcz"
+		},
+		{
+			"type": "file",
+			"source": "provisioners/data/x64/libmcrypt.tcz.md5.txt",
+			"destination": "/home/{{user `username`}}/libmcrypt.tcz.md5.txt"
+		},
+		{
+			"type": "shell",
+			"script": "provisioners/scripts/x64/boot.sh"
+		}
+   ]
+}
