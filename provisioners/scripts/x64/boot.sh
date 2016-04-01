@@ -103,11 +103,11 @@ done
 ####
 for i in /home/*/*.tcz
 do
-	# name=`echo $i | sed 's/.*\///'`
+   # name=`echo $i | sed 's/.*\///'`
    name=`basename ${i}`
-	md5sum "${i}" > "/mnt/sda1/tce/optional/${name}.md5.txt"
-	mv "${i}" /mnt/sda1/tce/optional/
-	echo "${name}" >> /mnt/sda1/tce/onboot.lst
+   md5sum "${i}" > "/mnt/sda1/tce/optional/${name}.md5.txt"
+   mv "${i}" /mnt/sda1/tce/optional/
+   echo "${name}" >> /mnt/sda1/tce/onboot.lst
 done
 
 ####
@@ -119,8 +119,8 @@ tce-load -wi openssh
 
 for package in `cat /home/klit/packages.txt`
 do
-	tce-load -wi $package
-	echo "tce-load -wi $package" >> /opt/validate.sh
+   tce-load -wi $package
+   echo "tce-load -wi $package" >> /opt/validate.sh
 done
 
 ####
