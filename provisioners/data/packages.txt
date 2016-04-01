@@ -13,3 +13,4 @@ openssh
 openssl
 pcre
 readline
+perl5
