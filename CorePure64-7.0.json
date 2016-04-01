@@ -28,9 +28,9 @@
             "boot_wait": "5s",
             "output_directory": "output/{{user `vm_name`}}",
             "vboxmanage": [
-               ["modifyvm", "{{.Name}}", "--memory", "8024"],
+               ["modifyvm", "{{.Name}}", "--memory", "4024"],
                ["modifyvm", "{{.Name}}", "--vram", "128"],
-               ["modifyvm", "{{.Name}}", "--cpus", "4"]
+               ["modifyvm", "{{.Name}}", "--cpus", "1"]
             ],
             "boot_command": [
                 "corepure64 user={{user `username`}}<enter><wait10>",
