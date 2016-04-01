@@ -73,18 +73,18 @@
          "destination": "/home/{{user `username`}}/php7.tcz"
       },
       {
-			"type": "file",
-			"source": "provisioners/data/x64/md5sum",
-			"destination": "/home/{{user `username`}}/md5sum"
-		},
-		{
-			"type": "file",
-			"source": "provisioners/data/packages.txt",
-			"destination": "/home/{{user `username`}}/packages.txt"
-		},
-		{
-			"type": "shell",
-			"script": "provisioners/scripts/x64/boot.sh"
-		}
+         "type": "file",
+         "source": "provisioners/data/x64/md5sum",
+         "destination": "/home/{{user `username`}}/md5sum"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/data/packages.txt",
+         "destination": "/home/{{user `username`}}/packages.txt"
+      },
+      {
+         "type": "shell",
+         "script": "provisioners/scripts/x64/boot.sh"
+      }
    ]
 }
