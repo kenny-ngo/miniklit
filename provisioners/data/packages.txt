@@ -1,0 +1,15 @@
+bash
+bzip2
+curl
+expat2
+freetype
+gmp
+icu
+libpng
+libxml2
+ncurses
+nginx
+openssh
+openssl
+pcre
+readline

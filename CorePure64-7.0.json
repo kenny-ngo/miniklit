@@ -4,7 +4,7 @@
       "iso_checksum": "a160d3185bd7e9ca6ac250ca62add67e",
       "iso_checksum_type": "md5",
       "vm_name": "CorePure64-7.0",
-      "disk_size": "4000",
+      "disk_size": "8000",
       "username": "klit",
       "password": "klit"
    },
@@ -28,9 +28,9 @@
             "boot_wait": "5s",
             "output_directory": "output/{{user `vm_name`}}",
             "vboxmanage": [
-               ["modifyvm", "{{.Name}}", "--memory", "1024"],
+               ["modifyvm", "{{.Name}}", "--memory", "8024"],
                ["modifyvm", "{{.Name}}", "--vram", "128"],
-               ["modifyvm", "{{.Name}}", "--cpus", "1"]
+               ["modifyvm", "{{.Name}}", "--cpus", "4"]
             ],
             "boot_command": [
                 "corepure64 user={{user `username`}}<enter><wait10>",
@@ -42,25 +42,45 @@
       }
    ],
    "provisioners": [
-		{
+      {
+         "type": "file",
+         "source": "provisioners/data/x64/jpeg-lib.tcz",
+         "destination": "/home/{{user `username`}}/jpeg-lib.tcz"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/data/x64/libmcrypt.tcz",
+         "destination": "/home/{{user `username`}}/libmcrypt.tcz"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/data/x64/mariadb.tcz.p1",
+         "destination": "/home/{{user `username`}}/mariadb.tcz.p1"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/data/x64/mariadb.tcz.p2",
+         "destination": "/home/{{user `username`}}/mariadb.tcz.p2"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/data/x64/mariadb.tcz.p3",
+         "destination": "/home/{{user `username`}}/mariadb.tcz.p3"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/data/x64/php7.tcz",
+         "destination": "/home/{{user `username`}}/php7.tcz"
+      },
+      {
 			"type": "file",
-			"source": "provisioners/data/x64/jpeglib.tcz",
-			"destination": "/home/{{user `username`}}/jpeglib.tcz"
+			"source": "provisioners/data/x64/md5sum",
+			"destination": "/home/{{user `username`}}/md5sum"
 		},
 		{
 			"type": "file",
-			"source": "provisioners/data/x64/jpeglib.tcz.md5.txt",
-			"destination": "/home/{{user `username`}}/jpeglib.tcz.md5.txt"
-		},
-		{
-			"type": "file",
-			"source": "provisioners/data/x64/libmcrypt.tcz",
-			"destination": "/home/{{user `username`}}/libmcrypt.tcz"
-		},
-		{
-			"type": "file",
-			"source": "provisioners/data/x64/libmcrypt.tcz.md5.txt",
-			"destination": "/home/{{user `username`}}/libmcrypt.tcz.md5.txt"
+			"source": "provisioners/data/packages.txt",
+			"destination": "/home/{{user `username`}}/packages.txt"
 		},
 		{
 			"type": "shell",
