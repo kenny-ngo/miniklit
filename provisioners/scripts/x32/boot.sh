@@ -91,6 +91,13 @@ do
 done
 
 ####
+# Enable 4GB of SWAP
+####
+echo "dd if=/dev/zero of=/mnt/sda1/miniklit.swp bs=1024 count=4096000" >> /opt/bootlocal.sh
+echo "chmod 0600 /mnt/sda1/miniklit.swp" >> /opt/bootlocal.sh
+echo "mkswap /mnt/sda1/miniklit.swp" >> /opt/bootlocal.sh
+
+####
 # Prepare additional packages
 ####
 echo "/usr/local/etc/init.d/openssh start 2>&1 >/dev/null" >> /opt/bootlocal.sh
