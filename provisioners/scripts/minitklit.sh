@@ -1,6 +1,6 @@
 #!/bin/sh
 ####
-# /etc/init.d/miniklit.sh
+# /opt/miniklit/miniklit.sh
 # Kenny Ngo - 04/01/2016
 ####
 [ $(id -u) = 0 ] || { echo "You need to be root" ; exit 1; }
@@ -11,13 +11,19 @@
 export PHP_FCGI_CHILDREN=5
 export PHP_FCGI_MAX_REQUESTS=500
 
+# optimized value for 4GB + 4GB Swap
+# ulimit -n 62500
+ulimit -Hn 65535
+ulimit -Sn 65535
+
+
 start_nginx(){
    [ -f /opt/miniklit/conf/nginx.conf ] || { echo "Missing nginx configuration" ; exit 1; }
    echo -n "Starting nginx"
    /usr/local/sbin/nginx -c /opt/miniklit/conf/nginx.conf
 }
 start_mariadb(){
-   [ -f /opt/miniklit/mariadb/data ] || { echo "Missing mariadb data" ; exit 1; }
+   [ -f /opt/miniklit/mariadb/data/ibdata1 ] || { echo "Missing mariadb data" ; exit 1; }
    echo "Starting mariadb"
    /usr/local/mariadb/bin/mysqld --user=klit --datadir=/opt/miniklit/mariadb/data --basedir=/usr/local/mariadb &
 }

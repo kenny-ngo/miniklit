@@ -85,7 +85,7 @@ fi
 # Merge large local extensions
 # GitHub only allow Max < 100mb
 ####
-for i in /home/*/*.tcz.p1
+for i in /home/klit/*.tcz.p1
 do
    name=`basename ${i} | sed 's/\.p1//'`
    filename=`echo ${i} | sed 's/\.p[0-9]\+$//'`
@@ -101,7 +101,7 @@ done
 ####
 # Install local extensions
 ####
-for i in /home/*/*.tcz
+for i in /home/klit/*.tcz
 do
    # name=`echo $i | sed 's/.*\///'`
    name=`basename ${i}`
@@ -110,20 +110,26 @@ do
    echo "${name}" >> /mnt/sda1/tce/onboot.lst
 done
 
-
-####
-# Enable 4GB of SWAP
-####
-echo "dd if=/dev/zero of=/mnt/sda1/miniklit.swp bs=1024 count=4096000" >> /opt/bootlocal.sh
-echo "chmod 0600 /mnt/sda1/miniklit.swp" >> /opt/bootlocal.sh
-echo "mkswap /mnt/sda1/miniklit.swp" >> /opt/bootlocal.sh
-
 ####
 # Prepare additional packages
 ####
 echo "/usr/local/etc/init.d/openssh start 2>&1 >/dev/null" >> /opt/bootlocal.sh
 sudo rm /usr/local/tce.installed/openssh
 tce-load -wi openssh
+
+####
+# Enable 4GB of SWAP
+####
+dd if=/dev/zero of=/mnt/sda1/miniklit.swp bs=1024 count=4096000
+chmod 0600 /mnt/sda1/miniklit.swp
+mkswap /mnt/sda1/miniklit.swp
+echo "swapon /mnt/sda1/miniklit.swp" >> /opt/bootlocal.sh
+
+####
+# Deploy Control Script
+####
+mv /home/klit/miniklit.sh /opt/miniklit/miniklit.sh
+chmod a+x /opt/miniklit/miniklit.sh
 
 for package in `cat /home/klit/packages.txt`
 do

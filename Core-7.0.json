@@ -89,6 +89,11 @@
       },
       {
          "type": "file",
+         "source": "provisioners/scripts/miniklit.sh",
+         "destination": "/home/{{user `username`}}/miniklit.sh"
+      },
+      {
+         "type": "file",
          "source": "provisioners/data/packages.txt",
          "destination": "/home/{{user `username`}}/packages.txt"
       },
