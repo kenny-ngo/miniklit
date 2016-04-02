@@ -5,6 +5,12 @@
 ####
 [ $(id -u) = 0 ] || { echo "You need to be root" ; exit 1; }
 
+####
+# Tweaking
+####
+export PHP_FCGI_CHILDREN=5
+export PHP_FCGI_MAX_REQUESTS=500
+
 start_nginx(){
    [ -f /opt/miniklit/conf/nginx.conf ] || { echo "Missing nginx configuration" ; exit 1; }
    echo -n "Starting nginx"
