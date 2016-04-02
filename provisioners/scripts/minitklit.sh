@@ -68,5 +68,18 @@ case $1 in
    start) start;;
    stop) stop;;
    restart) restart;;
+
+   start_nginx) start_nginx;;
+   stop_nginx) stop_nginx;;
+   restart_nginx) restart_nginx;;
+
+   start_php) start_php;;
+   stop_php) stop_php;;
+   restart_php) restart_php;;
+
+   start_mariadb) start_mariadb;;
+   stop_mariadb) stop_mariadbp;;
+   restart_mariadb) restart_mariadb;;
+
    *) echo "Usage $0 {start|stop|restart}"; exit 1
 esac
