@@ -23,7 +23,7 @@ start_mariadb(){
 }
 start_php(){
    echo "Starting php-cgi"
-   /usr/local/bin/php-cgi -b 127.0.0.1:9000&
+   /usr/bin/php-cgi -b 127.0.0.1:9000&
 }
 stop_nginx(){
    if pidof nginx>/dev/null; then
