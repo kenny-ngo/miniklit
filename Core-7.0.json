@@ -97,5 +97,4 @@
          "script": "provisioners/scripts/x32/boot.sh"
       }
    ]
-
 }
