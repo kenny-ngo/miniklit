@@ -34,12 +34,14 @@ At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimat
 - Install VirtualBox
 - If you use GIT ( git clone https://github.com/kenny-ngo/miniklit.git )
 - If you don't use GIT, you can download ( https://github.com/kenny-ngo/miniklit/archive/master.zip )
+
 > Watch: http://www.not-yet.com
 
 
 ### Linux / OSX
 - If you use GIT ( git clone https://github.com/kenny-ngo/miniklit.git )
 - If you don't use GIT, you can download ( https://github.com/kenny-ngo/miniklit/archive/master.zip )
+
 > Watch: http://www.not-yet.com
 
 ## LICENSE
