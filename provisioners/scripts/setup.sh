@@ -18,6 +18,7 @@ dos2unix /home/klit/nginx.conf
 mkdir -p /opt/miniklit/nginx/data
 mkdir -p /opt/miniklit/nginx/logs
 mv /home/klit/nginx.conf /opt/miniklit/nginx/
+mv /home/klit/nginx.tpl /opt/miniklit/nginx/
 
 ####
 # Prepare MariaDB

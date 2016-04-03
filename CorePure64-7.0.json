@@ -94,6 +94,11 @@
       },
       {
          "type": "file",
+         "source": "provisioners/conf/nginx.tpl",
+         "destination": "/home/{{user `username`}}/nginx.tpl"
+      },
+      {
+         "type": "file",
          "source": "provisioners/conf/php.ini",
          "destination": "/home/{{user `username`}}/php.ini"
       },
