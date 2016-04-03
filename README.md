@@ -9,15 +9,15 @@ Miniklit is based on the LAMP ( an archetypal model of web service solution stac
 
 At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimate goal is convert to machine images that can distribute to Cloud Providers such Amazon Web Services (AWS), Google, Microsoft and Rackspace.
 
-# REQUIREMENTS
+## REQUIREMENTS
 
-## Hardware
+### Hardware
 
 - PC or Hypervisor ( > 2ghz )
 - Memory ( > 8 gb )
 - Storage ( 40 gb )
 
-## Software
+### Software
 - Windows / Linux / OSX
 - VirtualBox ( virtualbox.org )
 - Packer ( packer.io )
@@ -26,9 +26,9 @@ At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimat
 
 
 
-# INSTALLATION
+## INSTALLATION
 
-## Windows
+### Windows
 - You need to install cygwin or putty ( whichever you feel comfortable ). I personally use cygwin
 - Install VirtualBox
 - If you use GIT ( git clone https://github.com/kenny-ngo/miniklit.git )
@@ -36,10 +36,10 @@ At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimat
 > Watch: http://www.not-yet.com
 
 
-## Linux / OSX
+### Linux / OSX
 - If you use GIT ( git clone https://github.com/kenny-ngo/miniklit.git )
 - If you don't use GIT, you can download ( https://github.com/kenny-ngo/miniklit/archive/master.zip )
 > Watch: http://www.not-yet.com
 
-# LICENSE
+## LICENSE
 The MIT License (MIT)
