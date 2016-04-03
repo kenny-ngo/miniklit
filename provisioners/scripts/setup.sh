@@ -16,29 +16,24 @@ dos2unix /home/klit/nginx.conf
 # Prepare NGINX
 ####
 mkdir -p /opt/miniklit/nginx/data
-mkdir -p /opt/miniklit/nginx/conf
 mkdir -p /opt/miniklit/nginx/logs
+mv /home/klit/nginx.conf /opt/miniklit/nginx/
 
 ####
 # Prepare MariaDB
 ####
 mkdir -p /opt/miniklit/mariadb/data
-mkdir -p /opt/miniklit/mariadb/conf
 mkdir -p /opt/miniklit/mariadb/logs
+mv /home/klit/my.cnf /opt/miniklit/mariadb/
+cd /usr/local/mariadb/
+./scripts/mysql_install_db --user=klit --basedir=/usr/local/mariadb --datadir=/opt/miniklit/mariadb/data
 
 ####
 # Prepare PHP7
 ####
 mkdir -p /opt/miniklit/php/opcache
 mkdir -p /opt/miniklit/php/logs
-
-####
-# Deploy Configuration and Template
-####
-mv /home/klit/my.cnf /opt/miniklit/mariadb/conf/
-mv /home/klit/nginx.conf /opt/miniklit/nginx/conf/
-mv /home/klit/php.ini /opt/miniklit/php/conf/
-
+mv /home/klit/php.ini /opt/miniklit/php/
 
 ####
 # Deploy Control Script

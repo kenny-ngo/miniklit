@@ -18,9 +18,9 @@ ulimit -Sn 65535
 
 
 start_nginx(){
-   [ -f /opt/miniklit/conf/nginx.conf ] || { echo "Missing nginx configuration" ; exit 1; }
+   [ -f /opt/miniklit/nginx/nginx.conf ] || { echo "Missing nginx configuration" ; exit 1; }
    echo -n "Starting nginx"
-   /usr/local/sbin/nginx -c /opt/miniklit/conf/nginx.conf
+   /usr/local/sbin/nginx -c /opt/miniklit/nginx/nginx.conf
 }
 start_mariadb(){
    [ -f /opt/miniklit/mariadb/data/ibdata1 ] || { echo "Missing mariadb data" ; exit 1; }

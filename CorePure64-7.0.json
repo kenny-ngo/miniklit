@@ -3,7 +3,7 @@
       "iso_url": "http://distro.ibiblio.org/tinycorelinux/7.x/x86_64/release/CorePure64-7.0.iso",
       "iso_checksum": "a160d3185bd7e9ca6ac250ca62add67e",
       "iso_checksum_type": "md5",
-      "vm_name": "CorePure64-7.0i-TMP",
+      "vm_name": "CorePure64-7.0",
       "disk_size": "8000",
       "username": "klit",
       "password": "klit"
