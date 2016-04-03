@@ -1,6 +1,6 @@
+#!/bin/sh
 ####
-# x32/boot.sh
-# Kenny Ngo - 03/25/2016
+# x32/boot.sh (c) Kenny Ngo
 ####
 
 set -x

@@ -94,6 +94,11 @@
       },
       {
          "type": "file",
+         "source": "provisioners/scripts/park.sh",
+         "destination": "/home/{{user `username`}}/park.sh"
+      },
+      {
+         "type": "file",
          "source": "provisioners/conf/my.cnf",
          "destination": "/home/{{user `username`}}/my.cnf"
       },

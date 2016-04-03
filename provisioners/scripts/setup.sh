@@ -1,6 +1,6 @@
+#!/bin/sh
 ####
-# setup.sh
-# Kenny Ngo - 03/25/2016
+# setup.sh (c) Kenny Ngo
 ####
 set -x
 
@@ -8,17 +8,21 @@ set -x
 # Sanity scripts / configuration files
 ####
 dos2unix /home/klit/miniklit.sh
+dos2unix /home/klit/park.sh
 dos2unix /home/klit/my.cnf
 dos2unix /home/klit/php.ini
 dos2unix /home/klit/nginx.conf
+dos2unix /home/klit/nginx.tpl
 
 ####
 # Prepare NGINX
 ####
 mkdir -p /opt/miniklit/nginx/data
 mkdir -p /opt/miniklit/nginx/logs
+mkdir -p /opt/miniklit/nginx/conf
 mv /home/klit/nginx.conf /opt/miniklit/nginx/
 mv /home/klit/nginx.tpl /opt/miniklit/nginx/
+chmod a+x /home/klit/park.sh
 
 ####
 # Prepare MariaDB

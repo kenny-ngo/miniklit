@@ -1,6 +1,6 @@
+#!/bin/sh
 ####
-# x64/boot.sh
-# Kenny Ngo - 03/25/2016
+# x64/boot.sh (c) Kenny Ngo
 ####
 
 set -x
@@ -79,7 +79,6 @@ then
    echo "Extensions are corrupted"
    exit 1
 fi
-
 
 ####
 # Merge large local extensions

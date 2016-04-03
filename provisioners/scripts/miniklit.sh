@@ -1,7 +1,6 @@
 #!/bin/sh
 ####
-# /opt/miniklit/miniklit.sh
-# Kenny Ngo - 04/01/2016
+# miniklit.sh (c) Kenny Ngo
 ####
 [ $(id -u) = 0 ] || { echo "You need to be root" ; exit 1; }
 
