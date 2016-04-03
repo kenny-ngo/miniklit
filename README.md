@@ -27,6 +27,7 @@ At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimat
 
 
 ## INSTALLATION
+> WARNING: large filesize  ( ~ 460mb )
 
 ### Windows
 - You need to install cygwin or putty ( whichever you feel comfortable ). I personally use cygwin
