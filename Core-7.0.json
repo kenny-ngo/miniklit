@@ -94,12 +94,31 @@
       },
       {
          "type": "file",
+         "source": "provisioners/conf/my.cnf",
+         "destination": "/home/{{user `username`}}/my.cnf"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/conf/nginx.conf",
+         "destination": "/home/{{user `username`}}/nginx.conf"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/conf/php.ini",
+         "destination": "/home/{{user `username`}}/php.ini"
+      },
+      {
+         "type": "file",
          "source": "provisioners/data/packages.txt",
          "destination": "/home/{{user `username`}}/packages.txt"
       },
       {
          "type": "shell",
          "script": "provisioners/scripts/x32/boot.sh"
+      },
+      {
+         "type": "shell",
+         "script": "provisioners/scripts/setup.sh"
       }
    ]
 }

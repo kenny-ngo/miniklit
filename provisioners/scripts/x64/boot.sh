@@ -68,13 +68,6 @@ ln -s /mnt/sda1/tce /etc/sysconfig/tcedir
 rm -rf /usr/local/tce.installed/*
 tce-load -wi ipv6-`uname -r` iptables iproute2
 
-
-####
-# Sanity scripts / configuration files
-####
-find /home/klit/ \( -name "*.ini" -o -name "*.sh" -o -name "*.txt" -o -name "*.cnf"\) -exec dos2unix {} \;
-
-
 ####
 # Validate the packages
 ####
@@ -117,9 +110,7 @@ do
    echo "${name}" >> /mnt/sda1/tce/onboot.lst
 done
 
-####
-# Prepare additional packages
-####
+
 echo "/usr/local/etc/init.d/openssh start 2>&1 >/dev/null" >> /opt/bootlocal.sh
 sudo rm /usr/local/tce.installed/openssh
 tce-load -wi openssh
@@ -127,17 +118,15 @@ tce-load -wi openssh
 ####
 # Enable 4GB of SWAP
 ####
-dd if=/dev/zero of=/mnt/sda1/miniklit.swp bs=1024 count=4096000
-chmod 0600 /mnt/sda1/miniklit.swp
-mkswap /mnt/sda1/miniklit.swp
+sudo dd if=/dev/zero of=/mnt/sda1/miniklit.swp bs=1024 count=4096000
+sudo chmod 0600 /mnt/sda1/miniklit.swp
+sudo mkswap /mnt/sda1/miniklit.swp
 echo "swapon /mnt/sda1/miniklit.swp" >> /opt/bootlocal.sh
 
 ####
-# Deploy Control Script
+# Prepare additional packages
 ####
-mv /home/klit/miniklit.sh /opt/miniklit/miniklit.sh
-chmod a+x /opt/miniklit/miniklit.sh
-
+dos2unix /home/klit/packages.txt
 for package in `cat /home/klit/packages.txt`
 do
    tce-load -wi $package

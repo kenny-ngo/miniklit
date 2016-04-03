@@ -3,7 +3,7 @@
       "iso_url": "http://distro.ibiblio.org/tinycorelinux/7.x/x86_64/release/CorePure64-7.0.iso",
       "iso_checksum": "a160d3185bd7e9ca6ac250ca62add67e",
       "iso_checksum_type": "md5",
-      "vm_name": "CorePure64-7.0",
+      "vm_name": "CorePure64-7.0i-TMP",
       "disk_size": "8000",
       "username": "klit",
       "password": "klit"
@@ -84,12 +84,31 @@
       },
       {
          "type": "file",
+         "source": "provisioners/conf/my.cnf",
+         "destination": "/home/{{user `username`}}/my.cnf"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/conf/nginx.conf",
+         "destination": "/home/{{user `username`}}/nginx.conf"
+      },
+      {
+         "type": "file",
+         "source": "provisioners/conf/php.ini",
+         "destination": "/home/{{user `username`}}/php.ini"
+      },
+      {
+         "type": "file",
          "source": "provisioners/data/packages.txt",
          "destination": "/home/{{user `username`}}/packages.txt"
       },
       {
          "type": "shell",
          "script": "provisioners/scripts/x64/boot.sh"
+      },
+      {
+         "type": "shell",
+         "script": "provisioners/scripts/setup.sh"
       }
    ]
 }
