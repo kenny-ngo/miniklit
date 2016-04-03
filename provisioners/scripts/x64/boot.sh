@@ -70,6 +70,12 @@ tce-load -wi ipv6-`uname -r` iptables iproute2
 
 
 ####
+# Sanity scripts / configuration files
+####
+find /home/klit/ \( -name "*.ini" -o -name "*.sh" -o -name "*.txt" -o -name "*.cnf"\) -exec dos2unix {} \;
+
+
+####
 # Validate the packages
 ####
 cd
@@ -80,6 +86,7 @@ then
    echo "Extensions are corrupted"
    exit 1
 fi
+
 
 ####
 # Merge large local extensions

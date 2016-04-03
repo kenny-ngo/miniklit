@@ -47,6 +47,10 @@ rm -rf /usr/local/tce.installed/*
 tce-load -wi ipv6-`uname -r` iptables iproute2
 tce-load -wi syslinux
 
+####
+# Sanity scripts / configuration files
+####
+find /home/klit/ \( -name "*.ini" -o -name "*.sh" -o -name "*.txt" -o -name "*.cnf"\) -exec dos2unix {} \;
 
 ####
 # Validate the packages
