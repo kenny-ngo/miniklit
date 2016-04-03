@@ -22,11 +22,13 @@ start_nginx(){
    /usr/local/sbin/nginx -c /opt/miniklit/nginx/nginx.conf
 }
 start_mariadb(){
-   if [ ! -f /opt/miniklit/mariadb/data/ibdata1 ]
-   then
+   if [ ! -f /opt/miniklit/mariadb/data/ibdata1 ]; then
       echo "-- Need to prepare database "
       cd /usr/local/mariadb/
       ./scripts/mysql_install_db --user=klit --basedir=/usr/local/mariadb --datadir=/opt/miniklit/mariadb/data
+   fi
+   if [ ! -f /etc/my.cnf ]; then
+        ln -sf /opt/miniklit/mariadb/my.cnf /etc/my.cnf
    fi
    echo "Starting mariadb"
    /usr/local/mariadb/bin/mysqld --user=klit --datadir=/opt/miniklit/mariadb/data --basedir=/usr/local/mariadb &
