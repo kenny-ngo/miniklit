@@ -3,7 +3,7 @@
 # park.sh (c) Kenny Ngo
 ####
 
-[ -z "$1" ] || { echo "Usage: $0 domain.com" ; exit 1; }
+[ ! -z "$1" ] || { echo "Usage: $0 domain.com" ; exit 1; }
 
 mkdir -p /opt/miniklit/nginx/data/$1
 mkdir -p /opt/miniklit/nginx/logs/$1
