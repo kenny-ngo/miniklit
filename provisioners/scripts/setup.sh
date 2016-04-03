@@ -30,8 +30,7 @@ chmod a+x /home/klit/park.sh
 mkdir -p /opt/miniklit/mariadb/data
 mkdir -p /opt/miniklit/mariadb/logs
 mv /home/klit/my.cnf /opt/miniklit/mariadb/
-cd /usr/local/mariadb/
-./scripts/mysql_install_db --user=klit --basedir=/usr/local/mariadb --datadir=/opt/miniklit/mariadb/data
+
 
 ####
 # Prepare PHP7

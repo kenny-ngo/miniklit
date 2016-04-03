@@ -77,7 +77,7 @@ diff md5sum md5sum.check >/dev/null
 if [ $? -ne 0 ]
 then
    echo "Extensions are corrupted"
-   exit 1
+   #exit 1
 fi
 
 ####

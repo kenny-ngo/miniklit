@@ -56,7 +56,7 @@ diff md5sum md5sum.check >/dev/null
 if [ $? -ne 0 ]
 then
    echo "Extensions are corrupted"
-   exit 1
+   #exit 1
 fi
 
 ####
@@ -85,7 +85,7 @@ do
    name=`basename ${i}`
    md5sum "${i}" > "/mnt/sda1/tce/optional/${name}.md5.txt"
    mv "${i}" /mnt/sda1/tce/optional/
-   #cp "${i}" /mnt/sda1/tce/optional/
+   # cp "${i}" /mnt/sda1/tce/optional/
    echo "${name}" >> /mnt/sda1/tce/onboot.lst
 done
 

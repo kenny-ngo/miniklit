@@ -22,7 +22,12 @@ start_nginx(){
    /usr/local/sbin/nginx -c /opt/miniklit/nginx/nginx.conf
 }
 start_mariadb(){
-   [ -f /opt/miniklit/mariadb/data/ibdata1 ] || { echo "Missing mariadb data" ; exit 1; }
+   if [ ! -f /opt/miniklit/mariadb/data/ibdata1 ]
+   then
+      echo "-- Need to prepare database "
+      cd /usr/local/mariadb/
+      ./scripts/mysql_install_db --user=klit --basedir=/usr/local/mariadb --datadir=/opt/miniklit/mariadb/data
+   fi
    echo "Starting mariadb"
    /usr/local/mariadb/bin/mysqld --user=klit --datadir=/opt/miniklit/mariadb/data --basedir=/usr/local/mariadb &
 }
