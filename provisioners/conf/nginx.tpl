@@ -2,8 +2,8 @@ server {
    listen  80;
    server_name  %domain% www.%domain%;
 
-   access_log /opt/miniklit/nginx/logs/%domain%/access.log  main;
-   error_log  /opt/miniklit/nginx/logs/%domain%/error.log  main;
+   access_log /opt/miniklit/nginx/logs/%domain%/access.log;
+   error_log  /opt/miniklit/nginx/logs/%domain%/error.log;
 
    location / {
       root   /opt/miniklit/nginx/data/%domain%;

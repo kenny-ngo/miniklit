@@ -15,7 +15,7 @@ At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimat
 
 - PC or Hypervisor ( > 2ghz )
 - Memory ( > 8 gb )
-- Storage ( 40 gb )
+- Storage ( > 40 gb )
 
 ### Software
 - Windows / Linux / OSX
@@ -23,7 +23,6 @@ At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimat
 - Packer ( packer.io )
 - GIT ( desktop.github.com ) * Optional
 - SSH client
-
 
 
 ## INSTALLATION
