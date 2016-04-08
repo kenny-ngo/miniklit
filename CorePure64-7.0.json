@@ -118,8 +118,7 @@
       },
       {
          "type": "shell",
-         "script": "provisioners/scripts/setup.sh"
+         "script": "provisioners/scripts/setup.sh" 
       }
-   ],
-   "post-processors": ["vagrant"]
+   ]
 }
