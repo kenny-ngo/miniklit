@@ -130,6 +130,5 @@
          "type": "shell",
          "script": "provisioners/scripts/setup.sh"
       }
-   ],
-   "post-processors": ["vagrant"]
+   ]
 }

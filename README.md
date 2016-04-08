@@ -13,7 +13,7 @@ At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimat
 
 ### Hardware
 
-- PC or Hypervisor ( > 2ghz )
+- Hypervisor ( > 2ghz )
 - Memory ( > 8 gb )
 - Storage ( > 40 gb )
 
@@ -34,14 +34,14 @@ At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimat
 - If you use GIT ( git clone https://github.com/kenny-ngo/miniklit.git )
 - If you don't use GIT, you can download ( https://github.com/kenny-ngo/miniklit/archive/master.zip )
 
-> Watch: http://www.not-yet.com
+> Watch: https://www.youtube.com/watch?v=G95NSGW_Sg4
 
 
 ### Linux / OSX
 - If you use GIT ( git clone https://github.com/kenny-ngo/miniklit.git )
 - If you don't use GIT, you can download ( https://github.com/kenny-ngo/miniklit/archive/master.zip )
 
-> Watch: http://www.not-yet.com
+> Watch: https://www.youtube.com/watch?v=G95NSGW_Sg4
 
 ## LICENSE
 The MIT License (MIT)
