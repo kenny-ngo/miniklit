@@ -43,5 +43,9 @@ At the moment, it runs as a VM and depends on VirtualBox and Packer. Its ultimat
 
 > Watch: https://www.youtube.com/watch?v=G95NSGW_Sg4
 
+### Other Video Clips
+- PHP7 Compilation on TinyCore7 x64 ( https://www.youtube.com/watch?v=xihhhqe3N5k )
+- Building TinyCore 7.0 Container using Packer ( https://www.youtube.com/watch?v=9AEMpJJLiu0 )
+
 ## LICENSE
 The MIT License (MIT)
